@@ -1,0 +1,5 @@
+.DS_Store
+.resin-sync.yml
+*.log
+*.gpx
+*.pyc

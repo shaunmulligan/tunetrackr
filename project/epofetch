@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Usage: ./epofetch [ <file_name> [ <output_file> ] ]
+
+#Example:
+# eporetrieve MTK14.EPO /tmp/MTK14.EPO
+
+EPO=${1-MTK14.EPO}
+file=${2-$EPO}
+
+if [ -e $file ] ; then
+	mv $file $file.last
+fi
+
+wget -O${file} ftp://gtopagpsenduser01:enduser080807@ftp.gtop-tech.com/${EPO}
